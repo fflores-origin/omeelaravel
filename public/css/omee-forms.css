@@ -1,0 +1,41 @@
+	.title-form {
+		font-weight: 400;
+    	letter-spacing: 1px;
+    	text-transform: capitalize;
+		background-color: #f7f7f7;
+		font-size: 32px;
+    	text-align: center;
+    	padding: 15px 0;
+    	border-top: 1px solid #eee;
+    	border-bottom: 1px solid #eee;
+    	margin-bottom: 30px;
+    	color: black;
+	}
+
+	input:not([type]), input[type="email" i], input[type="number" i], input[type="password" i], input[type="tel" i], input[type="url" i], input[type="text" i] {
+    	border-radius: 1;
+    	padding: 12px 10px;
+    	webkit-input-placeholder-color: red;
+	}
+
+	.btn {
+		padding: 15px 0;
+		color: #585858;
+	}
+
+	.btn-pink {
+		background-color: #ff2b99;
+		color: white;
+	}
+
+	.customInput {
+		margin: 20px 0;
+	}
+	
+	.lbl, .radio {
+		font-size: 16px;
+	}
+
+
+
+	

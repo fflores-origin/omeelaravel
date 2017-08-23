@@ -23,3 +23,12 @@ Route::get('/', 'Home\HomeController@index');
 Route::get('login', function () {
     return view('user\login');
 });
+
+
+Route::get('profesionales', function () {
+    return view('profesionales');
+});
+
+Route::get('profesionales/{id}', function () {
+    return view('profesionales', ['id']);
+});

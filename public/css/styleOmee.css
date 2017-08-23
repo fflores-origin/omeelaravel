@@ -1,0 +1,149 @@
+
+
+body {
+	font-family: FontAwesome;	
+}
+
+body {
+    background: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    line-height: 1.65;
+    color: #666;
+}
+
+
+
+#top-bar-content {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1,5em;
+}
+
+#top-bar-content a {
+    color: #ff2b99;
+}
+
+#top-bar-wrap {
+    border-bottom: 1px solid #eee;
+    font-size: 0.923em;
+}
+.top-bar-centered {
+    float: none;
+    text-align: center;
+}
+
+#site-header {
+    width: 100% !important;
+    max-width: none !important;
+}
+
+#site-logo-inner img{
+	max-width: 900px;
+	font-family: inherit;
+}
+
+#border {
+	border-bottom: 1px #fff solid;
+}
+
+li {
+	display: inline-block;
+	float: none
+}
+
+.navbar > li > a {
+    display: block;
+    height: 50px;
+    line-height: 40px;
+    color: #555;
+}
+
+a {
+	display: inline-block;
+    line-height: 1;
+    padding: 0.5em 0.8em;
+    border-radius: 3px;
+	font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    color:#555;
+}
+
+.navbar-style {
+    background: #fff;
+    border-top: 1px solid #eee;
+    position: relative;
+}
+
+button {
+	border: none;
+	font-size: 0.923em;
+	padding: .5em 1em;
+    margin: 0;
+    display: inline-block;
+    background-color: #ff2b99;
+    color: white;
+}
+
+button:hover, .wpex-carousel .owl-prev:hover, .wpex-carousel .owl-next:hover, #site-navigation .menu-button >a >span.link-inner, #site-navigation .menu-button >a >span.link-inner:hover, .navbar-style-six .dropdown-menu >.current-menu-item >a, .navbar-style-six .dropdown-menu >.current-menu-parent >a {
+    background-color: #ff2b99;
+}
+
+
+.firstnav li {
+	display: inline-block;
+    float: none;
+}
+
+li {
+	margin: 0;
+	padding: 0;
+}
+
+.navbar {
+	margin-bottom: 0;
+}
+
+.firstnav a:link , a:visited {
+    text-decoration: none;
+}
+
+.firstnav a:hover , a:active {
+    color: #ff2b99;
+    text-decoration: none;
+}
+
+.secondnav {
+    background-color: #ff2b99;
+    line-height: 1.5;
+    
+}
+
+.secondnav a:link , a:visited {
+    color: #fff;
+    text-decoration: none;
+}
+
+.secondnav a:hover, a:active{
+	background-color: #fff;
+	color: #ff2b99;
+	border-radius: 0;
+    text-decoration-line: none;
+}
+
+
+.secondnav a {
+    margin: 0px 15px !important;
+    font-weight: 700 !important;
+    font-size: 12px;
+    border: 0px solid #fff !important;
+    line-height: 1.5;
+}
+
+.first-ul {
+    padding: 0;
+}
+
+
+
