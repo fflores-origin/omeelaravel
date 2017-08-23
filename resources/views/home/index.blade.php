@@ -6,5 +6,4 @@
 
 
 
-
-<?php echo View::make('_shared.footer-public'); ?>
+@include('_shared.footer-public')
