@@ -18,17 +18,30 @@ Route::get('/', function () {
 */
 
 
+// HOME
 Route::get('/', 'Home\HomeController@index');
+
+
+// USER
 
 Route::get('login', function () {
     return view('user\login');
 });
 
+//CONTACTO
 
-Route::get('profesionales', function () {
-    return view('profesionales');
+Route::get('contacto', function () {
+    return view('contacto.index');
 });
 
-Route::get('profesionales/{id}', function () {
-    return view('profesionales', ['id']);
+Route::post('contacto', 'ContactoController@mensaje');
+
+//PROFESIONALES
+
+Route::get('profesionales', function () {
+    return view('profesionales.index');
+});
+
+Route::get('profesionales/{id}', function ($id) {
+    return view('profesionales.alumno', ['id'=> $id]);
 });

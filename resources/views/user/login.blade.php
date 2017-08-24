@@ -1,5 +1,7 @@
-@include('_shared.header-public',['title'=>'Ingresar'])
 
+@extends('_shared.layout', ['title'=>'Ingresar'])
+
+@section('contenido')
 
 
 <div class="form">
@@ -44,5 +46,4 @@
 
 
 
-
-@include('_shared.footer-public')
+@stop

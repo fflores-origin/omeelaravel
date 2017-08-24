@@ -1,6 +1,6 @@
-@include('_shared.header-public',['title'=>'Bienvenido'])
+@extends('_shared.layout', ['title'=>'OMEE - Bienvenido'])
 
-
+@section('contenido')
 
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
@@ -41,4 +41,4 @@ $('.carousel').carousel({
 </script>
 
 
-@include('_shared.footer-public')
+@stop

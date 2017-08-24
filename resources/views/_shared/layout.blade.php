@@ -4,8 +4,8 @@
     <title>{{ $title }}</title>
     
 	<!-- ICON PAGE -->
-	<link rel="icon" href="favicon.ico" type="image/x-icon"/>
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+	<link rel="icon" href="{{ URL::asset('favicon.ico') }}" type="image/x-icon"/>
+	<link rel="shortcut icon" href="{{ URL::asset('favicon.ico') }}" type="image/x-icon"/>
 
 	<!-- Resoureces -->
 
@@ -14,10 +14,10 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">	
-	<link rel="stylesheet" type="text/css" href="css/styleOmee.css">
-	<link rel="stylesheet" type="text/css" href="css/omee-forms.css">	
-	<script type="text/javascript" src="js/cookieTool.js"></script>
+	<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/font-awesome.min.css') }}">	
+	<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/styleOmee.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/omee-forms.css') }}">	
+	<script type="text/javascript" src="{{ URL::asset('/js/cookieTool.js') }}"></script>
 
 </head>
 <body>
@@ -39,7 +39,7 @@
 			<div id="site-logo" class="site-branding header-three-logo col-lg-12 col-md-6 top-bar-centered">
 				<div id="site-logo-inner" class="clr">
 					<a href="{{ url('/') }}" title="OMEE" rel="home" class="main-logo" style="max-widht:900px;">
-						<img src="images/cabezal.png" alt="OMEE">
+						<img src="{{ URL::asset('images/cabezal.png') }}" alt="OMEE">
 					</a>
 				</div>
 			</div>
@@ -51,15 +51,15 @@
 			<div class="navbar-style">
 				<nav id="site-navigator ">
 					<ul class="navbar first-ul container">
-						<li><a href="{{ url('/profesionales')}}"><span>Matriculados</span></a></li>
-						<li><a href="{{ url('/profesionales/add')}}"><span >Matricular Alumnos</span></a></li>
-						<li><a href="{{ url('/certificado')}}"><span >Certificarme en OMEE</span></a></li>
-						<li><a href="{{ url('/escuelas')}}"><span >Escuelas de Belleza</span></a></li>
-						<li><a href="{{ url('/escuelas/add')}}"><span >Agregar Mi Escuela</span></a></li>
+						<li><a href="{{ url('profesionales')}}"><span>Matriculados</span></a></li>
+						<li><a href="{{ url('profesionales/add')}}"><span >Matricular Alumnos</span></a></li>
+						<li><a href="{{ url('certificado')}}"><span >Certificarme en OMEE</span></a></li>
+						<li><a href="{{ url('escuelas')}}"><span >Escuelas de Belleza</span></a></li>
+						<li><a href="{{ url('escuelas/add')}}"><span >Agregar Mi Escuela</span></a></li>
 						<li><a href="#"><span >Ser Auspiciante</span></a></li>
 						<li><a href="#"><span >Bolsa de Trabajo</span></a></li>
-						<li><a href="{{ url('/contacto')}}"><span >Contacto</span></a></li>
-						<li><a href="{{ url('/user/login')}}"><span ><span class="fa fa-sign-in fa-lg"></span></span></a></li>
+						<li><a href="{{ url('contacto')}}"><span >Contacto</span></a></li>
+						<li><a href="{{ url('login')}}"><span ><span class="fa fa-sign-in fa-lg"></span></span></a></li>
 					</ul>
 				</nav>
 			</div>
@@ -82,4 +82,33 @@
 
 		</div>
 		<!-- NAV 2 -->
-	</header>
+</header>
+
+
+@yield('contenido')
+
+
+<style type="text/css">
+	#footer-bottom {
+		color: #ff2b99;
+		font-size: 15px;
+	}
+	#footer-bottom a{
+		color: #ff2b99;
+		font-size: 14px;
+	}
+</style>
+
+
+<br/>
+<div id="footer-bottom" align="center">
+	<div id="footer-bottom-inner" class="container">
+		<div id="copyright" role="contentinfo">
+			Copyright <a href="{{ url('/') }}"></a> - Todos los Derechos Reservados | <a href="{{ url('/') }}">Legales</a> | <a href="{{ url('politicas') }}">Política de Cookies</a>			
+		</div>
+	</div>
+</div>
+
+
+</body>
+</html>
