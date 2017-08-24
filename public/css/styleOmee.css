@@ -145,5 +145,8 @@ li {
     padding: 0;
 }
 
-
-
+.alertas {
+    padding: .75rem 2rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+}

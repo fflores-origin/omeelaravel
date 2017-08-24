@@ -16,6 +16,16 @@ class ContactoController extends Controller
 
     public function mensaje(Request $request)
     {
-    	return $request->all();
+
+    	$this->validate($request, [
+    		'apyn' => 'required',
+    		'correo' => ['required','email'],
+    		'mensaje' => ['required','min:5']
+    		]);
+
+    	$data = $request->all();
+
+        return back()
+            ->with('info','Tu mensaje ha sido enviado correctamente !');
     }
 }

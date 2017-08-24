@@ -45,3 +45,6 @@ Route::get('profesionales', function () {
 Route::get('profesionales/{id}', function ($id) {
     return view('profesionales.alumno', ['id'=> $id]);
 });
+
+
+//ESCUELA

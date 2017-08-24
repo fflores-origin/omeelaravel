@@ -11,6 +11,8 @@
 		padding: 15px 60px;
 	}
 
+
+
 </style>
 
 
@@ -18,31 +20,41 @@
 	<h3>Contactenos</h3>
 </div>
 
+@if(session()->has('info'))
+	<div class="alertas alert-success">
+	  <strong>Genial !</strong> {{ session('info') }}
+	</div>
+@endif
+
 <div class="container">
 	<div class="row">
+
+
 		<div class="col-md-6">
 			
 			<form method="POST" action="contacto">
 				
 				<div class="form-group">
 					<label>Nombre y Apellido</label>	
-    				<input type="text" class="form-control" name="apyn" required>
+    				<input type="text" class="form-control" name="apyn" value="{{ old('apyn') }}" required>
   				</div>
 
   				<div class="form-group">
-  					<label for="msj">Correo de Contacto</label>
-    				<input type="email" class="form-control" name="correo" placeholder="" required> 
+  					<label for="msj">Correo de Contacto * </label>
+    				<input type="email" class="form-control" name="correo" value="{{ old('correo') }}" required> 
   				</div>
 
   				<div class="form-group">
-  					<label for="msj">Teléfono</label>
-    				<input type="text" class="form-control" name="telefono" required>
+  					<label for="msj">Teléfono *</label>
+    				<input type="text" class="form-control" name="telefono" value="{{ old('telefono') }}" required>
   				</div>
 
   				<div class="form-group">
-  					<label for="msj">Su Mensaje</label>
-    				<textarea  rows="10" class="form-control" id="msj" name="mensaje" required></textarea>  
+  					<label for="msj">Su Mensaje *</label>
+    				<textarea  rows="10" class="form-control" id="msj" name="mensaje" required>{{ old('mensaje') }}</textarea> 
+    				<div id="passwordHelpInline" class="text-muted">{{ $errors->first('mensaje') }}</div>
   				</div>
+
   				<button type="submit" class="btn btn-pink ">Enviar Consulta</button>
 
 			</form>
