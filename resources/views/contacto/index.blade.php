@@ -29,11 +29,11 @@
 <div class="container">
 	<div class="row">
 
-
+		
 		<div class="col-md-6">
 			
 			<form method="POST" action="contacto">
-				
+				 {{ csrf_field() }}
 				<div class="form-group">
 					<label>Nombre y Apellido</label>	
     				<input type="text" class="form-control" name="apyn" value="{{ old('apyn') }}" required>
