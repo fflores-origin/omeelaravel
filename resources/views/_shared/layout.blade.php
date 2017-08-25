@@ -23,6 +23,14 @@
 <body>
 <header id="site-header">
 
+
+@if(session()->has('user'))
+	<div class="nav">
+	  
+	</div>
+@endif
+
+
 		<!--COOKIE TOP BAR -->
 		<div id="top-bar-wrap" >
 			<div id="top-bar" class="container" style="margin-top: 10px;">
@@ -53,13 +61,20 @@
 					<ul class="navbar first-ul container">
 						<li><a href="{{ url('profesionales')}}"><span>Matriculados</span></a></li>
 						<li><a href="{{ url('profesionales/add')}}"><span >Matricular Alumnos</span></a></li>
-						<li><a href="{{ url('certificado')}}"><span >Certificarme en OMEE</span></a></li>
-						<li><a href="{{ url('escuelas')}}"><span >Escuelas de Belleza</span></a></li>
-						<li><a href="{{ url('escuelas/add')}}"><span >Agregar Mi Escuela</span></a></li>
+						<li><a href="{{ route('certificados') }}"><span >Certificarme en OMEE</span></a></li>
+						<li><a href="{{ route('escuelas') }}"><span >Escuelas de Belleza</span></a></li>
+						<li><a href="{{ route('escuelas.create') }}"><span >Agregar Mi Escuela</span></a></li>
 						<li><a href="#"><span >Ser Auspiciante</span></a></li>
 						<li><a href="#"><span >Bolsa de Trabajo</span></a></li>
 						<li><a href="{{ url('contacto')}}"><span >Contacto</span></a></li>
-						<li><a href="{{ url('login')}}"><span ><span class="fa fa-sign-in fa-lg"></span></span></a></li>
+						<li>
+							@if (auth()->check())
+								<a href="{{ url('logout') }}"><span ><span class="fa fa-sign-in fa-lg"></span></span></a>
+							@endif
+							@if (auth()->guest())
+								<a href="{{ url('login') }}"><span ><span class="fa fa-sign-in fa-lg"></span></span></a>
+							@endif	
+						</li>
 					</ul>
 				</nav>
 			</div>

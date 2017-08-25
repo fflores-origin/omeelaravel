@@ -1,4 +1,4 @@
-@extends('_shared.layout', ['title'=>'Alumno'])
+@extends('_shared.layout', ['title'=>'Matricular Alumno'])
 
 @section('contenido')
 
