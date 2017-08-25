@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Alumno' => $baseDir . '/app/Alumno.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Escuela' => $baseDir . '/app/Escuela.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
@@ -37,6 +38,7 @@ return array(
     'Carbon\\Exceptions\\InvalidDateException' => $vendorDir . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
     'CreateAlumnosTable' => $baseDir . '/database/migrations/2017_08_25_211823_create_alumnos_table.php',
     'CreateEscuelasTable' => $baseDir . '/database/migrations/2017_08_25_025521_create_escuelas_table.php',
+    'CreatePaisesTable' => $baseDir . '/database/migrations/2017_08_25_230118_create_paises_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'Cron\\AbstractField' => $vendorDir . '/mtdowling/cron-expression/src/Cron/AbstractField.php',

@@ -270,6 +270,7 @@ class ComposerStaticInit9b7751af08c6dfcfdfa0ffe90ab23966
     );
 
     public static $classMap = array (
+        'App\\Alumno' => __DIR__ . '/../..' . '/app/Alumno.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Escuela' => __DIR__ . '/../..' . '/app/Escuela.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
@@ -301,6 +302,7 @@ class ComposerStaticInit9b7751af08c6dfcfdfa0ffe90ab23966
         'Carbon\\Exceptions\\InvalidDateException' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
         'CreateAlumnosTable' => __DIR__ . '/../..' . '/database/migrations/2017_08_25_211823_create_alumnos_table.php',
         'CreateEscuelasTable' => __DIR__ . '/../..' . '/database/migrations/2017_08_25_025521_create_escuelas_table.php',
+        'CreatePaisesTable' => __DIR__ . '/../..' . '/database/migrations/2017_08_25_230118_create_paises_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'Cron\\AbstractField' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/AbstractField.php',

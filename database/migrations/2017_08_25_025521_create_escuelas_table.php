@@ -35,13 +35,12 @@ class CreateEscuelasTable extends Migration
             $table->string('nombre');
             $table->string('apellido');
             $table->string('direccion');
-            $table->string('codigopostal');
+            $table->string('codigo_postal');
             $table->string('provincia');
             $table->integer('pais');
             $table->string('telefono');
 
             $table->timestamps();
-
             
             $table->foreign('tipo_id')->references('id')->on('tipo_escuelas');
 
@@ -58,11 +57,7 @@ class CreateEscuelasTable extends Migration
      */
     public function down()
     {
-        Schema::table('escuelas', function (Blueprint $table) {
-            $table->dropForeign(['tipo_id']);
-        });
-
-        Schema::dropIfExists('escuelas');
         Schema::dropIfExists('tipoescuelas');
+        Schema::dropIfExists('escuelas');
     }
 }

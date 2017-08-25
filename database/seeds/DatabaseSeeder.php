@@ -45,4 +45,8 @@ class DatabaseSeeder extends Seeder
         ]);
     }
 
+    private function paises() {
+        
+    }
+
 }

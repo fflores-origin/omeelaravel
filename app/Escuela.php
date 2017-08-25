@@ -7,13 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 class Escuela extends Model
 {
     protected $fillable = [
+        'id',
         'razon_social', 
         'nombre_escuela', 
         'tipo_id',
         'nombre',
         'apellido',
         'direccion',
-        'codigopostal',
+        'codigo_postal',
         'provincia',
         'pais',
         'telefono'
