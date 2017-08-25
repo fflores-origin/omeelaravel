@@ -13,7 +13,7 @@
 			
 						
 			
-			<form action="/login" method="post" >
+			<form action="login" method="post" >
 				{!! csrf_field() !!}
 				<div class="customInput">
 					<input type="email" name="email" placeholder="Usuario" class="form-control"></input>
@@ -36,7 +36,7 @@
 			</form>
 			<br>
 			<div class="form-group" align="center">
-				<a href="{{ route('/') }}" style="font-size: 13px;">¿Perdiste tu contraseña?</a>
+				<a href="{{ url('reset') }}" style="font-size: 13px;">¿Perdiste tu contraseña?</a>
 			</div>		
 
 		</div>

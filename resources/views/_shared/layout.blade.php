@@ -14,10 +14,11 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/font-awesome.min.css') }}">	
-	<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/styleOmee.css') }}">
-	<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/omee-forms.css') }}">	
+	<link rel="stylesheet" href="{{ URL::asset('css/font-awesome.min.css') }}">	
+	<link rel="stylesheet" href="{{ URL::asset('css/styleOmee.css') }}">
+	<link rel="stylesheet" href="{{ URL::asset('css/omee-forms.css') }}">	
 	<script type="text/javascript" src="{{ URL::asset('/js/cookieTool.js') }}"></script>
+	<link rel="stylesheet" href="http://v4-alpha.getbootstrap.com/examples/sticky-footer-navbar/sticky-footer-navbar.css">
 
 </head>
 <body>
@@ -46,7 +47,7 @@
 		<div id="site-header-inner" class="container align-center">
 			<div id="site-logo" class="site-branding header-three-logo col-lg-12 col-md-6 top-bar-centered">
 				<div id="site-logo-inner" class="clr">
-					<a href="{{ url('/') }}" title="OMEE" rel="home" class="main-logo" style="max-widht:900px;">
+					<a href="{{ url('home') }}" title="OMEE" rel="home" class="main-logo" style="max-widht:900px;">
 						<img src="{{ URL::asset('images/cabezal.png') }}" alt="OMEE">
 					</a>
 				</div>
@@ -116,13 +117,13 @@
 
 
 <br/>
-<div id="footer-bottom" align="center">
+<footer id="footer-bottom" class="footer" align="center">
 	<div id="footer-bottom-inner" class="container">
 		<div id="copyright" role="contentinfo">
 			Copyright <a href="{{ url('/') }}"></a> - Todos los Derechos Reservados | <a href="{{ url('/') }}">Legales</a> | <a href="{{ url('politicas') }}">Política de Cookies</a>			
 		</div>
 	</div>
-</div>
+</footer>
 
 
 </body>

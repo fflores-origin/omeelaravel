@@ -24,7 +24,7 @@ Route::get('generateAdmin', function() {
 
 
 // HOME
-Route::get('/', ['as' => 'home' , 'uses' => 'Home\HomeController@index']);
+Route::get('/', 'Home\HomeController@index');
 
 // AUTH
 
