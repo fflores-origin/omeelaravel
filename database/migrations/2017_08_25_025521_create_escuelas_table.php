@@ -17,6 +17,7 @@ class CreateEscuelasTable extends Migration
         Schema::create('tipoescuelas', function (Blueprint $table) {
             
             $table->integer('id');
+            $table->primary('id');
             $table->string('description');
 
             $table->timestamps();
@@ -27,7 +28,7 @@ class CreateEscuelasTable extends Migration
             $table->integer('id');
             $table->string('razon_social');
             $table->string('nombre_escuela');
-            $table->integer('tipo');
+            $table->integer('tipo_id');
             $table->string('nombre');
             $table->string('apellido');
             $table->string('direccion');
@@ -38,7 +39,7 @@ class CreateEscuelasTable extends Migration
 
             $table->timestamps();
 
-            $table->foreign('id')->references('id')->on('tipoescuelas');
+            $table->foreign('tipo_id')->references('id')->on('tipoescuelas');
         });
 
 
@@ -53,8 +54,7 @@ class CreateEscuelasTable extends Migration
     public function down()
     {
         Schema::table('escuelas', function (Blueprint $table) {
-
-            $table->foreign('d')->references('id')->on('tipoescuelas');
+            $table->dropForeign(['tipoid','id']);
         });
 
         Schema::dropIfExists('escuelas');
