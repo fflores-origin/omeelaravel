@@ -47,7 +47,7 @@
 		<div id="site-header-inner" class="container align-center">
 			<div id="site-logo" class="site-branding header-three-logo col-lg-12 col-md-6 top-bar-centered">
 				<div id="site-logo-inner" class="clr">
-					<a href="{{ url('home') }}" title="OMEE" rel="home" class="main-logo" style="max-widht:900px;">
+					<a href="{{ url('/') }}" title="OMEE" rel="home" class="main-logo" style="max-widht:900px;">
 						<img src="{{ URL::asset('images/cabezal.png') }}" alt="OMEE">
 					</a>
 				</div>
@@ -70,7 +70,7 @@
 						<li><a href="{{ url('contacto')}}"><span >Contacto</span></a></li>
 						<li>
 							@if (auth()->check())
-								<a href="{{ url('logout') }}"><span ><span class="fa fa-sign-in fa-lg"></span></span></a>
+								<a href="{{ url('logout') }}"><span ><span class="fa fa-sign-out fa-lg"></span></span></a>
 							@endif
 							@if (auth()->guest())
 								<a href="{{ url('login') }}"><span ><span class="fa fa-sign-in fa-lg"></span></span></a>

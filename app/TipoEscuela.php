@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class TipoEscuela extends Model
+class Tipoescuela extends Model
 {
     protected $fillable = [
     	'id',

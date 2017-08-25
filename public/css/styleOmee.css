@@ -38,9 +38,10 @@ body {
     max-width: none !important;
 }
 
-#site-logo-inner img{
-	max-width: 900px;
-	font-family: inherit;
+#site-logo-inner img {
+    max-width: 900px;
+    max-width: 100%; 
+    
 }
 
 #border {

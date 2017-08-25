@@ -11,18 +11,6 @@
 |
 */
 
-
-Route::get('generateAdmin', function() {
-	$user = new App\User;
-	$user->name = 'admin';
-	$user->email = 'pachu.flores@gmail.com';
-	$user->password = bcrypt('Novedad.2017');
-	$user->save();
-
-	return $user;
-});
-
-
 // HOME
 Route::get('/', 'Home\HomeController@index');
 
@@ -49,6 +37,7 @@ Route::get('profesionales/{id}', function ($id) { return view('profesionales.alu
 //ESCUELA
 Route::get('escuelas' , ['as' => 'escuelas' , 'uses' => 'EscuelasController@index']);
 Route::get('escuelas/create', ['as' => 'escuelas.create', 'uses' => 'EscuelasController@create']);
+Route::post('escuela', 'EscuelasController@store');
 
 
 //CERTIFICACION
