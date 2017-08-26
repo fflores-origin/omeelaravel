@@ -6,13 +6,11 @@ body {
 
 body {
     background: #fff;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 13px;
     line-height: 1.65;
     color: #666;
 }
-
-
 
 #top-bar-content {
     font-weight: 400;
@@ -151,3 +149,16 @@ li {
     margin-bottom: 1rem;
     border: 1px solid transparent;
 }
+
+footer, footer a {
+        color: #ff2b99;
+        font-size: 14px;
+        text-decoration: none;
+}
+
+footer a:hover {
+    color:  #ff2b99;
+    text-decoration: none;
+}
+
+    

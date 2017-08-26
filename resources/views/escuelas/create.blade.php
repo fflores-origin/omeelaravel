@@ -4,7 +4,13 @@
 
 <style type="text/css">
 	
+	.form-check-label {
+		font-size: 14px;
+	}
 
+	.form-check-input {
+		font-size: 20px;
+	}
 
 </style>
 
@@ -13,8 +19,8 @@
 		<h3>Registrar Escuela</h3>
 </div>
 
-<div class="container col-md-6">
-	
+<div class="container ">
+	<div class="col-md-6 mx-auto">
 	<form action="{{ url('escuela')}}" method="post"> 
 		{!! csrf_field() !!}
 
@@ -27,68 +33,68 @@
 			<input type="text" name="nombre_escuela" placeholder="Nombre Escuela" class="form-control" required>
 		</div>
 		
-		<div class="form-group">
 		<h6>Tipo Escuela</h6>
+		<div>
 			<div class="form-check">
-				<label class="form-check-label">
-					<input type="radio" class="form-check-input" id="omee" name="tipo_omee" value="1">
-					Escuela OMEE
-		      </label>
-		    </div>
-		    <div class="form-check">
-				<label class="form-check-label">
-					<input type="radio" class="form-check-input" id="iap" name="tipo_iap" value="2">
-					Escuela IAP
-		      </label>
-		    </div>
+			  <label class="form-check-label">
+			    <input class="form-check-input" type="radio" name="tipo_id" id="radio1" value="1" checked>
+			    Escuela OMEE
+			  </label>
+			</div>
+			<div class="form-check">
+			  <label class="form-check-label">
+			    <input class="form-check-input" type="radio" name="tipo_id" id="radio2" value="2">
+			    Escuela IAP
+			  </label>
+			</div>	
 		</div>
 		
 		<div  class="form-group">
-			<input type="text" name="nombre" placeholder="Nombre" class="form-control">
+			<input type="text" name="nombre" placeholder="Nombre" class="form-control" required>
 		</div>
 
 		<div  class="form-group">
-			<input type="text" name="apellido" placeholder="Apellido" class="form-control">
+			<input type="text" name="apellido" placeholder="Apellido" class="form-control" required>
 		</div>
 
 		<div  class="form-group">
-			<input type="text" name="direccion" placeholder="Direccion" class="form-control">
+			<input type="text" name="direccion" placeholder="Direccion" class="form-control" required>
 		</div>
 
 		<div  class="form-group">
-			<input type="text" name="codigo_postal" placeholder="Codigo Postal" class="form-control">
+			<input type="text" name="codigo_postal" placeholder="Codigo Postal" class="form-control" required>
 		</div>		
 		<br>
 		<h6>Ubicación</h6>
 		<div  class="form-group">
-			<input type="text" name="provincia" placeholder="Provincia" class="form-control">
+			<input type="text" name="provincia" placeholder="Provincia" class="form-control" required>
 		</div>	
 
 		<div  class="form-group"> 
-			<input type="text" name="cuidad" placeholder="Pais - DROPDOWN" class="form-control">
+			<input type="text" name="pais" placeholder="Pais - DROPDOWN" class="form-control" required>
 		</div>	
 
 		<div  class="form-group"> 
-			<input type="text" name="telefono" placeholder="Telefono" class="form-control">
+			<input type="text" name="telefono" placeholder="Telefono" class="form-control" required>
 		</div>	
 
 		<div  class="form-group"> 
-			<input type="email" name="email" placeholder="Direción de Email" class="form-control">
+			<input type="email" name="email" placeholder="Direción de Email" class="form-control" required>
 		</div>	
 
 		<br>
 		<h6>Datos de Usuario</h6>
 		<div  class="form-group">
-			<input type="text" name="usuario" placeholder="Usuario" class="form-control">
+			<input type="text" name="usuario" placeholder="Usuario" class="form-control" required>
 		</div>	
 
 		<div  class="form-group">
-			<input type="text" name="password" placeholder="Contraseña" class="form-control">
+			<input type="text" name="password" placeholder="Contraseña" class="form-control" required>
 		</div>	
-
 		<input class="btn btn-block btn-pink" type="submit" name="Registrar" value="Registrar">
+		<br>
 	</form>
-
+	</div>
 </div>
 
 

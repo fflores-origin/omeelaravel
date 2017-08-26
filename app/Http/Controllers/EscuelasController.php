@@ -37,7 +37,7 @@ class EscuelasController extends Controller
      */
     public function store(Request $request)
     {
-        return 'se registro escuela';
+        return $request->all();
     }
 
     /**

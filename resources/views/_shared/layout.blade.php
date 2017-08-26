@@ -9,9 +9,12 @@
 
 	<!-- Resoureces -->
 
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="{{ URL::asset('css/font-awesome.min.css') }}">	
@@ -104,24 +107,14 @@
 @yield('contenido')
 
 
-<style type="text/css">
-	#footer-bottom {
-		color: #ff2b99;
-		font-size: 15px;
-	}
-	#footer-bottom a{
-		color: #ff2b99;
-		font-size: 14px;
-	}
-</style>
 
-
-<br/>
 <footer id="footer-bottom" class="footer" align="center">
 	<div id="footer-bottom-inner" class="container">
-		<div id="copyright" role="contentinfo">
-			Copyright <a href="{{ url('/') }}"></a> - Todos los Derechos Reservados | <a href="{{ url('/') }}">Legales</a> | <a href="{{ url('politicas') }}">Política de Cookies</a>			
-		</div>
+	<p>
+		Copyright <a href="{{ url('/') }}"> OMEE </a> - Todos los Derechos Reservados | <a href="{{ url('/') }}">Legales</a> | <a href="{{ url('politicas') }}">Política de Cookies</a>
+	</p>
+					
+		
 	</div>
 </footer>
 
