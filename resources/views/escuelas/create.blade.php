@@ -24,17 +24,15 @@
 @if(!$errors->isEmpty())
 
 <div class="alert alert-danger" role="alert">
-  <p>
-		<strong>Error !</strong> Ha ingresado algunos datos erroneos:
-  </p>
-  <p>
-		<ul>
+  <div class="container col-md-4">
+		<div>
+			<strong>Error !</strong> Ha ingresado algunos datos erroneos:
+		</div>
 	  	@foreach ($errors->all() as $error)
-	    <li>{{ $error }}</li>
+	    	<div> * {{ $error }}</div>
 	  	@endforeach	
-	  	</ul>
-  </p>
-  
+
+  </div>
 </div>
 
    

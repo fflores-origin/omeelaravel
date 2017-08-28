@@ -3,15 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Escuela;
 
 class ProfesionalesController extends Controller
 {
-        /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
         return $request->all();
@@ -24,8 +20,9 @@ class ProfesionalesController extends Controller
 
     public function create() 
     {
-        $escuelas() = array();
-        return view('profesionales.create',compact('escuelas'));
+        $escuelas = Escuela::all();
+
+        return view('profesionales.create', compact('escuelas'));
 
     }
 }

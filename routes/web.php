@@ -35,7 +35,7 @@ Route::post('contacto', 'ContactoController@mensaje');
 
 Route::get('profesionales', ['as' => 'profesionales', 'uses' => 'ProfesionalesController@index']);
 Route::get('profesionales/{id}', function ($id) { return view('profesionales.alumno', ['id'=> $id]);});
-Route::get('profesionales/create', ['as' => 'profesionales.create', 'uses' => 'ProfesionalesController@create']);
+Route::get('profesionales/create', ['as' => 'prof-create', 'uses' => 'ProfesionalesController@create']);
 Route::post('profesionales', 'ProfesionalesController@store');
 
 //ESCUELA

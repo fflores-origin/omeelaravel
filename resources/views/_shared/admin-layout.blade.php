@@ -19,7 +19,13 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<?php function activeMenu($url){
+		return request()->is($url) ? 'active' : '';
+	}
+?>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="font-size: 14px; margin-bottom: 20px;">
   <a class="navbar-brand" href="#">OMEE</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -28,10 +34,10 @@
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto">
 		<li class="nav-item active">
-			<a class="nav-link" href="{{ route('/') }}">Volver al Sitio <span class="sr-only">(current)</span></a>
+			<a class="nav-link {{ activeMenu('/') }}" href="{{ route('/') }}">Volver al Sitio <span class="sr-only">(current)</span></a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="{{ route('admin-profesionales')}}">Matriculados</a>
+			<a class="nav-link {{ activeMenu('admin/profesionales') }}" href="{{ route('admin-profesionales')}}">Matriculados</a>
 	     </li>
 		<li class="nav-item">
 			<a class="nav-link" href="#">Certificados</a>
@@ -40,7 +46,7 @@
 			<a class="nav-link" href="#">Examenes</a>
 		</li>
 		</ul>
-	<div class="form-inline my-2 my-lg-0">
+	<div class="form-inline my-2">
       	<ul class="navbar-nav mr-auto">
       		<li class="nav-item">
 			<span class="label label-default">Usuario</span>

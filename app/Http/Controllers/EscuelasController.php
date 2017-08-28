@@ -12,7 +12,10 @@ class EscuelasController extends Controller
 
     public function index()
     {
-        return view('escuelas.index');
+
+        $data = Escuela::get();
+
+        return view('escuelas.index', compact('data'));
     }
 
     public function create()

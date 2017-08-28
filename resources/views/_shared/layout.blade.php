@@ -85,7 +85,7 @@
 				<nav id="site-navigator ">
 					<ul class="navbar first-ul container">
 						<li><a href="{{ url('profesionales')}}"><span>Matriculados</span></a></li>
-						<li><a href="{{ route('profesionales.create')}}"><span >Matricular Alumnos</span></a></li>
+						<li><a href="{{ route('prof-create')}}"><span >Matricular Alumnos</span></a></li>
 						<li><a href="{{ route('certificados') }}"><span >Certificarme en OMEE</span></a></li>
 						<li><a href="{{ route('escuelas') }}"><span >Escuelas de Belleza</span></a></li>
 						<li><a href="{{ route('escuelas.create') }}"><span >Agregar Mi Escuela</span></a></li>
