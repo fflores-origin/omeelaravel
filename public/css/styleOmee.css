@@ -11,14 +11,16 @@ body {
 
 input[type="email"]::-webkit-input-placeholder,
 input[type="text"]::-webkit-input-placeholder,
-input[type="password"]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+input[type="password"]::-webkit-input-placeholder,
+input[type="date"]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
       color: #ff2b99;
       opacity: 1;
 
 }
 input[type="email"]::-moz-placeholder,
 input[type="text"]::-moz-placeholder,
-input[type="password"]::-moz-placeholder { /* Firefox 19+ */
+input[type="password"]::-moz-placeholder,
+input[type="date"]::-moz-placeholder { /* Firefox 19+ */
     color: #ff2b99;
     opacity: 1;
 }
