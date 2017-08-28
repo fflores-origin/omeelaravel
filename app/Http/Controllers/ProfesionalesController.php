@@ -4,13 +4,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Escuela;
+use App\User;
 
 class ProfesionalesController extends Controller
 {
 
     public function store(Request $request)
     {
-        return $request->all();
+        
+        $d = $request->all();
+
+        $u = new User;
+        $u->name = $d['usuario'];
+        $u->password = $d['password'];
+        $u->email = $d['email'];
+
+        return $d;
+
+
     }
 
     public function index()
@@ -25,4 +36,6 @@ class ProfesionalesController extends Controller
         return view('profesionales.create', compact('escuelas'));
 
     }
+
+
 }
