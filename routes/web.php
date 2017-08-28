@@ -12,7 +12,10 @@
 */
 
 // HOME
-Route::get('/', 'Home\HomeController@index');
+Route::get('/', [
+			'as' => '/', 
+			'uses' => 'Home\HomeController@index']
+		);
 
 // AUTH
 
@@ -30,9 +33,10 @@ Route::post('contacto', 'ContactoController@mensaje');
 
 //PROFESIONALES
 
-Route::get('profesionales', function () {  return view('profesionales.index'); });
+Route::get('profesionales', ['as' => 'profesionales', 'uses' => 'ProfesionalesController@index']);
 Route::get('profesionales/{id}', function ($id) { return view('profesionales.alumno', ['id'=> $id]);});
-
+Route::get('profesionales/create', ['as' => 'profesionales.create', 'uses' => 'ProfesionalesController@create']);
+Route::post('profesionales', 'ProfesionalesController@store');
 
 //ESCUELA
 Route::get('escuelas' , ['as' => 'escuelas' , 'uses' => 'EscuelasController@index']);
@@ -42,3 +46,16 @@ Route::post('escuela', 'EscuelasController@store');
 
 //CERTIFICACION
 Route::get('certificados', ['as' => 'certificados', 'uses' => 'CertificacionController@create']);
+
+//ADMIN
+Route::get( 'admin' , [
+			'as' => 'admin-index', 
+			'uses' => 'AdminController@index'
+			]);
+
+Route::get('admin/profesionales', [
+	'as' => 'admin-profesionales', 
+	'uses' => 'AdminController@matriculados'
+	]);
+
+

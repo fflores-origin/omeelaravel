@@ -31,7 +31,7 @@ class CreateAlumnosTable extends Migration
             
             $table->timestamps();
 
-            $table->foreign('escuela_id')->references('id')->on('escuelas');
+            //$table->foreign('escuela_id')->references('id')->on('escuelas');
         });
     }
 

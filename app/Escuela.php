@@ -10,7 +10,7 @@ class Escuela extends Model
         'id',
         'razon_social', 
         'nombre_escuela', 
-        'tipo_id',
+        'tipo_escuela_id',
         'nombre',
         'apellido',
         'direccion',

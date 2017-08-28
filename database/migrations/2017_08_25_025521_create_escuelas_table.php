@@ -31,23 +31,20 @@ class CreateEscuelasTable extends Migration
 
             $table->string('razon_social');
             $table->string('nombre_escuela');
-            $table->integer('tipo_id');
+            $table->integer('tipo_escuela_id');
             $table->string('nombre');
             $table->string('apellido');
             $table->string('direccion');
             $table->string('codigo_postal');
             $table->string('provincia');
-            $table->integer('pais');
+            $table->string('pais');
             $table->string('telefono');
 
             $table->timestamps();
             
-            $table->foreign('tipo_id')->references('id')->on('tipo_escuelas');
+            //$table->foreign('tipo_id')->references('id')->on('tipo_escuelas');
 
         });
-
-
-
     }
 
     /**
@@ -57,7 +54,8 @@ class CreateEscuelasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipoescuelas');
+        Schema::dropIfExists('tipo_escuelas');
+
         Schema::dropIfExists('escuelas');
     }
 }

@@ -1,8 +1,5 @@
 
 
-body {
-	font-family: FontAwesome;	
-}
 
 body {
     background: #fff;
@@ -11,6 +8,34 @@ body {
     line-height: 1.65;
     color: #666;
 }
+
+input[type="email"]::-webkit-input-placeholder,
+input[type="text"]::-webkit-input-placeholder,
+input[type="password"]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      color: #ff2b99;
+      opacity: 1;
+
+}
+input[type="email"]::-moz-placeholder,
+input[type="text"]::-moz-placeholder,
+input[type="password"]::-moz-placeholder { /* Firefox 19+ */
+    color: #ff2b99;
+    opacity: 1;
+}
+input[type="email"]:-ms-input-placeholder,
+input[type="text"]:-ms-input-placeholder,
+input[type="password"]:-ms-input-placeholder  { /* IE 10+ */
+    color: #ff2b99;
+    opacity: 1;
+}
+input[type="email"]:-moz-placeholder,
+input[type="text"]:-moz-placeholder,
+input[type="password"]:-moz-placeholder { /* Firefox 18- */
+    color: #ff2b99;
+    opacity: 1;
+}
+
+
 
 #top-bar-content {
     font-weight: 400;
@@ -89,7 +114,6 @@ button:hover, .wpex-carousel .owl-prev:hover, .wpex-carousel .owl-next:hover, #s
     background-color: #ff2b99;
 }
 
-
 .firstnav li {
 	display: inline-block;
     float: none;
@@ -116,7 +140,6 @@ li {
 .secondnav {
     background-color: #ff2b99;
     line-height: 1.5;
-    
 }
 
 .secondnav a:link , a:visited {
@@ -130,7 +153,6 @@ li {
 	border-radius: 0;
     text-decoration-line: none;
 }
-
 
 .secondnav a {
     margin: 0px 15px !important;
@@ -160,5 +182,6 @@ footer a:hover {
     color:  #ff2b99;
     text-decoration: none;
 }
+
 
     

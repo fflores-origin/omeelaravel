@@ -16,11 +16,11 @@
 			<form action="login" method="post" >
 				{!! csrf_field() !!}
 				<div class="customInput">
-					<input type="email" name="email" placeholder="Usuario" class="form-control"></input>
+					<input type="email" name="email" placeholder="Email" class="form-control"></input>
 				</div>
 
 				<div class="customInput">
-					<input type="password" name="password" placeholder="password" class="form-control"></input>
+					<input type="password" name="password" placeholder="Contraseña" class="form-control"></input>
 				</div>			
 
 				<div style="margin-top: 10px; font-size: 16px;" class="form-group">
