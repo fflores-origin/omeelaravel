@@ -13,11 +13,11 @@
 
 			<div class="form-group">
 				<h6>Datos Alumno</h6>
-				<input type="text" name="nombre" placeholder="Nombre" class="form-control" required>
+				<input type="text" name="nombre" placeholder="Nombre" value="{{ old('nombre') }}" class="form-control" required>
 			</div>
 
 			<div class="form-group">
-				<input type="text" name="apellido" placeholder="Apellido" class="form-control" required>
+				<input type="text" name="apellido" placeholder="Apellido" value="{{ old('apellido') }}" class="form-control" required>
 			</div>
 
 			<div class="form-group">
@@ -33,41 +33,41 @@
 			</div>
 
 			<div class="form-group">
-				<input type="text" name="dni" placeholder="DNI" class="form-control" required>
+				<input type="text" name="dni" placeholder="DNI" class="form-control" value="{{ old('dni') }}" required>
 			</div>
 
 			<div class="form-group">
 				<span class="label label-default">Fecha de Nacimiento</span>
-				<input type="date" name="fecha_naciemiento" placeholder="Fecha de Nacimiento" class="form-control" required>
+				<input type="date" name="fecha_nacimiento" placeholder="Fecha de Nacimiento" value="{{ old('fecha_nacimiento') }}" class="form-control" required>
 			</div>
 
 			<div class="form-group">
-				<input type="text" name="direccion" placeholder="Direccion" class="form-control" required>
+				<input type="text" name="direccion" placeholder="Direccion" value="{{ old('direccion') }}" class="form-control" required>
 			</div>
 
 			<div class="form-group">
-				<input type="text" name="cuidad" placeholder="Cuidad" class="form-control" required>
+				<input type="text" name="ciudad" placeholder="Cuidad" value="{{ old('ciudad') }}" class="form-control" required>
 			</div>
 
 			<div class="form-group">
-				<input type="text" name="codigo_postal" placeholder="Codigo Postal" class="form-control" required>
+				<input type="text" name="codigo_postal" placeholder="Codigo Postal" value="{{ old('codigo_postal') }}" class="form-control" required>
 			</div>
 
 			<div class="form-group">
-				<input type="text" name="pais" placeholder="Pais" class="form-control" required>
+				<input type="text" name="pais" placeholder="Pais" value="{{ old('pais') }}" class="form-control" required>
 			</div>
 
 			<div class="form-group">
-				<input type="text" name="horarios" placeholder="Horarios" class="form-control" required>
+				<input type="text" name="horarios" placeholder="Horarios" value="{{ old('horarios') }}" class="form-control" required>
 			</div>
 
 			<div class="form-group">
 				<h6>Datos Usuario</h6>
-				<input type="text" name="usuario" placeholder="Usuario" class="form-control" required>
+				<input type="text" name="usuario" placeholder="Usuario" value="{{ old('usuario') }}" class="form-control" required>
 			</div>
 
 			<div class="form-group">
-				<input type="email" name="email" placeholder="Email" class="form-control" required>
+				<input type="email" name="email" placeholder="Email" value="{{ old('email') }}" class="form-control" required>
 			</div>
 
 			<div class="form-group">
