@@ -27,4 +27,11 @@ class Escuela extends Model
     {
         return $this->hasOne('App\User','id','id');
     }
+
+    public function tipo()
+    {
+        return $this->hasOne('App\TipoEscuela','tipo_escuela_id','id');
+    }
+
+    
 }

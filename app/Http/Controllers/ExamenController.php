@@ -15,7 +15,7 @@ class ExamenController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**

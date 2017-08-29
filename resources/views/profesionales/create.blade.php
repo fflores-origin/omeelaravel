@@ -6,6 +6,34 @@
 	<div align="center" class="title-form">
 			<h3>Matricuar alumno</h3>
 	</div>
+
+	@if(!$errors->isEmpty())
+	<div class="alert alert-danger" role="alert">
+	  <div class="container col-md-4">
+			<div>
+				<strong>Error !</strong> Ha ingresado algunos datos erroneos:
+			</div>
+		  	@foreach ($errors->all() as $error)
+		    	<div> * {{ $error }}</div>
+		  	@endforeach	
+	  </div>
+	</div>	   
+	@endif
+
+	@if ( session()->has('info') )
+	<div class="container">
+			<div class="alert alert-success" role="alert">
+				<div class="container">
+					<div class="row" style="font-size: 16px;">      
+						<strong>¡ Felicidades ! </strong>&nbsp; {{ session('info') }}
+			    	</div>
+				</div>
+			</div>		
+	</div>
+
+	@endif
+
+
 	<div class="container ">
 		<div class="col-md-6 mx-auto">
 			<form method="post" action="{{ url('profesionales') }}">
@@ -15,6 +43,8 @@
 				<h6>Datos Alumno</h6>
 				<input type="text" name="nombre" placeholder="Nombre" value="{{ old('nombre') }}" class="form-control" required>
 			</div>
+
+
 
 			<div class="form-group">
 				<input type="text" name="apellido" placeholder="Apellido" value="{{ old('apellido') }}" class="form-control" required>

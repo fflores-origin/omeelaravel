@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\CreateAlumnoRequest;
 use App\Escuela;
 use App\User;
 use App\Alumno;
@@ -10,16 +11,16 @@ use App\Alumno;
 class ProfesionalesController extends Controller
 {
 
-    public function store(Request $request)
+    public function store(CreateAlumnoRequest $request)
     {
         
         $d = $request->all();
 
         $u = new User;
         $u->name = $d['usuario'];
-        $u->password = $d['password'];
+        $u->password = bcrypt($d['password']);
         $u->email = $d['email'];
-        //$u->save();
+        $u->save();
 
         $a = new Alumno;
 
@@ -34,9 +35,9 @@ class ProfesionalesController extends Controller
         $a->codigo_postal = $d['codigo_postal'];
         $a->pais = $d['pais'];
         $a->horarios = $d['horarios'];
-        //$a->save();
+        $a->save();
 
-        return back()->with('info',' Nuevo alumno ' . $a->nombre . ' ' . $a->apellido .' Cargado . Nº Matricula : ' . $a->id );
+        return back()->with('info',' Nuevo alumno ' . $a->nombre . ' ' . $a->apellido .' dado de alta correctamente. Nº Matricula :' . $a->id );
 
 
     }

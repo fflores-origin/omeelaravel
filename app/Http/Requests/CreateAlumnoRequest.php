@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateEscuelaRequest extends FormRequest
+class CreateAlumnoRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,20 +24,17 @@ class CreateEscuelaRequest extends FormRequest
     public function rules()
     {
         return [
-            'razon_social' => 'required',
-            'nombre_escuela' => 'required', 
-            'tipo_id' => 'required',
-            'nombre' => 'required',
-            'apellido' => 'required',
-            'direccion' => 'required',
-            'codigo_postal' => 'required',
-            'provincia' => 'required',
-            'pais' => 'required',
-            'telefono' => 'required',
             'email' => 'required|string|email|max:255|unique:users',
             'usuario' => 'required|string|max:255',
-            'password'=> 'required|string|min:6'
-            
+            'password'=> 'required|string|min:6',
+            'nombre'=> 'required',
+            'apellido'=> 'required',
+            'escuela_id'=> 'required',
+            'dni'=> 'required',
+            'fecha_nacimiento'=> 'required|date',
+            'direccion'=> 'required',
+            'ciudad'=> 'required',
+            'pais'=> 'required'
         ];
     }
 }

@@ -16,7 +16,6 @@ class CreateExamenesTable extends Migration
         Schema::create('examenes', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('alumno_id');
-            $table->integer('escuela_id');
             $table->boolean('aprobado');
             $table->integer('intentos');
             $table->timestamps();

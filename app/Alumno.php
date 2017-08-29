@@ -19,4 +19,15 @@ class Alumno extends Model
 		'pais',
 		'horarios'
     ];
+
+
+     public function user()
+    {
+        return $this->hasOne('App\User','id','id');
+    }
+
+    public function certificados() 
+    {
+    	retrun $this->hasMany('App\Certificado');
+    }
 }
