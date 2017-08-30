@@ -24,7 +24,6 @@
 	}
 ?>
 
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="font-size: 14px; margin-bottom: 20px;">
   <a class="navbar-brand" href="#">OMEE</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,6 +44,11 @@
 		<li class="nav-item">
 			<a class="nav-link" href="#">Examenes</a>
 		</li>
+		@if(auth()->user()->hasRole('admin'))
+		<li class="nav-item">
+			<a class="nav-link" href="#">Usuarios</a>
+		</li>
+		@endif
 		</ul>
 	<div class="form-inline my-2">
       	<ul class="navbar-nav mr-auto">

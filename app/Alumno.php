@@ -28,6 +28,6 @@ class Alumno extends Model
 
     public function certificados() 
     {
-    	retrun $this->hasMany('App\Certificado');
+    	return $this->hasMany('App\Certificado');
     }
 }

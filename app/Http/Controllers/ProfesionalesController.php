@@ -11,6 +11,11 @@ use App\Alumno;
 class ProfesionalesController extends Controller
 {
 
+    public function __construct() 
+    {
+        $this->middleware('auth', ['only' => ['create','store']]);
+    }
+
     public function store(CreateAlumnoRequest $request)
     {
         

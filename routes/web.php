@@ -19,7 +19,7 @@ Route::get('/', [
 
 // AUTH
 
-Route::get('login', 'Auth\LoginController@showLoginForm');
+Route::get('login', ['as' => 'login' , 'uses' => 'Auth\LoginController@showLoginForm']);
 Route::post('login', 'Auth\LoginController@login');
 Route::get('logout', 'Auth\LoginController@logout');
 
@@ -57,5 +57,7 @@ Route::get('admin/profesionales', [
 	'as' => 'admin-profesionales', 
 	'uses' => 'AdminController@matriculados'
 	]);
+
+
 
 
