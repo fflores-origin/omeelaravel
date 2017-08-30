@@ -59,5 +59,14 @@ Route::get('admin/profesionales', [
 	]);
 
 
+Route::get('admin/usuarios', [ 
+	'as' => 'admin-usuarios',
+	'uses' => 'AdminUsuariosController@index']);
 
+Route::get('admin/examenes', [ 
+	'as' => 'admin-examenes',
+	'uses' => 'AdminExamenesController@index']);
 
+Route::get('admin/certificados', [ 
+	'as' => 'admin-certificados',
+	'uses' => 'AdminCertificadosController@index']);

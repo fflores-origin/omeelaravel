@@ -39,28 +39,26 @@
 			<a class="nav-link {{ activeMenu('admin/profesionales') }}" href="{{ route('admin-profesionales')}}">Matriculados</a>
 	     </li>
 		<li class="nav-item">
-			<a class="nav-link" href="#">Certificados</a>
+			<a class="nav-link {{ activeMenu('admin/certificados') }}" href="{{ route('admin-certificados') }}">Certificados</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="#">Examenes</a>
+			<a class="nav-link {{ activeMenu('admin/examenes') }}" href="{{ route('admin-examenes') }}">Examenes</a>
 		</li>
 		@if(auth()->user()->hasRole('admin'))
 		<li class="nav-item">
-			<a class="nav-link" href="#">Usuarios</a>
+			<a class="nav-link {{ activeMenu('admin/usuarios') }}" href="{{ route('admin-usuarios') }}">Usuarios</a>
 		</li>
 		@endif
 		</ul>
-	<div class="form-inline my-2">
-      	<ul class="navbar-nav mr-auto">
-      		<li class="nav-item">
-			<span class="label label-default">Usuario</span>
-			</li>
-      	</ul>
-    </div>
+		<div class="form-inline my-2">
+	      	<ul class="navbar-nav mr-auto">
+	      		<li class="nav-item">
+					<a class="nav-link" href="#">{{ auth()->user()->perfil }}</a>
+				</li>
+	      	</ul>
+	    </div>
   </div>
 </nav>
-
-
 
 @yield('contenido')
 

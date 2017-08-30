@@ -33,6 +33,16 @@ class User extends Authenticatable
         return $this->hasOne('App\Role','id', 'role_id');
     }
 
+    private function escuela() 
+    {
+        return $this->hasOne('App\Escuela','id','id');
+    }
+
+    private function alumno() 
+    {
+        return $this->hasOne('App\Alumno','id','id');
+    }
+
 
     public function hasRole($role)
     {
@@ -43,4 +53,26 @@ class User extends Authenticatable
             return false;
      
     }
+
+    public function perfil()
+    {
+
+        if ($this->role->key === 'admin')
+            return null;
+
+        if ($this->role->key === 'escuela' )
+            return $this->escuela();
+        
+        if ($this->role->key == 'alumno')
+            return $this->alumno();
+
+        return null;
+
+    }
+
+    public function getUserName()
+    {
+        
+    }
+
 }

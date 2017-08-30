@@ -28,7 +28,7 @@
 <header id="site-header">
 
 
-@if(auth()->check() )
+@if(auth()->check())
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 30px;">
   <a class="navbar-brand" href="{{ url('/')}}"><img src="{{ URL::asset('favicon.ico') }}" height="15px"> OMEE</a>
