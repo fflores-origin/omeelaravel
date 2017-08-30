@@ -7,6 +7,13 @@ use App\Http\Controllers\Controller;
 
 class AdminExamenesController extends Controller
 {
+
+	public function __construct() 
+	{
+		$this->middleware('auth');
+	}
+
+
     //examenes-index
     public function index() 
     {

@@ -8,6 +8,11 @@ use App\Http\Controllers\Controller;
 class AdminUsuariosController extends Controller
 {
 
+	public function __construct() 
+	{
+		$this->middleware('auth');
+	}	
+
     //usuarios-index
     public function index()
     {
