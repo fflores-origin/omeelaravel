@@ -7,6 +7,7 @@ use App\Http\Requests\CreateAlumnoRequest;
 use App\Escuela;
 use App\User;
 use App\Alumno;
+use DB;
 
 class ProfesionalesController extends Controller
 {
@@ -18,7 +19,7 @@ class ProfesionalesController extends Controller
 
     public function store(CreateAlumnoRequest $request)
     {
-        
+        DB::beginTransaction();
         $d = $request->all();
 
         $u = new User;
@@ -43,6 +44,7 @@ class ProfesionalesController extends Controller
         $a->horarios = $d['horarios'];
         $a->save();
 
+        DB::commit();
         return back()->with('info',' Nuevo alumno :' . $u->nombre . ' ' . $u->apellido .', dado de alta correctamente. Nº Matricula :<strong>' . $a->id . '</strong>');
 
 

@@ -26,7 +26,7 @@ class CreateAlumnosTable extends Migration
             $table->string('direccion');
             $table->string('ciudad');
             $table->string('codigo_postal')->nullable();
-            $table->integer('pais');
+            $table->string('pais'); //despues agregar tabla
             $table->string('horarios')->nullable();
             
             $table->timestamps();

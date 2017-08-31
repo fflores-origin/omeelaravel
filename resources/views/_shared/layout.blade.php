@@ -94,10 +94,10 @@
 						<li><a href="{{ url('contacto')}}"><span >Contacto</span></a></li>
 						<li>
 							@if (auth()->check())
-								<a href="{{ url('logout') }}"><span ><span class="fa fa-sign-out fa-lg"></span></span></a>
+								<a href="{{ url('logout') }}"><span >Log Out <span class="fa fa-sign-out fa-lg"></span></span></a>
 							@endif
 							@if (auth()->guest())
-								<a href="{{ url('login') }}"><span ><span class="fa fa-sign-in fa-lg"></span></span></a>
+								<a href="{{ url('login') }}"><span >Log In <span class="fa fa-sign-in fa-lg"></span></span></a>
 							@endif	
 						</li>
 					</ul>
