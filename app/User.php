@@ -15,14 +15,14 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','role_id'
+        'name', 
+        'email', 
+        'password',
+        'role_id',
+        'nombre',
+        'apellido'
     ];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
     protected $hidden = [
         'password', 'remember_token',
     ];
@@ -54,25 +54,10 @@ class User extends Authenticatable
      
     }
 
-    public function perfil()
-    {
-
-        if ($this->role->key === 'admin')
-            return null;
-
-        if ($this->role->key === 'escuela' )
-            return $this->escuela();
-        
-        if ($this->role->key == 'alumno')
-            return $this->alumno();
-
-        return null;
-
-    }
 
     public function getUserName()
     {
-        
+        return $this->nombre . ' ' . $this->apellido;
     }
 
 }

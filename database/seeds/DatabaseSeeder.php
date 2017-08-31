@@ -57,6 +57,13 @@ class DatabaseSeeder extends Seeder
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
             ]);
+
+        DB::table('roles')->insert([
+            'key' => 'imprenta',
+            'name' => 'Impresion de Certificados',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+            ]);
     }
 
     private function users() {
@@ -65,13 +72,23 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('Novedad.2017'),
             'email' => 'pachu.flores@gmail.com',
             'role_id' => 1,
+            'nombre' => 'user',
+            'apellido' =>'admin',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
+
+        DB::table('users')->insert([
+            'name' => 'imprenta',
+            'password' => bcrypt('Imprenta.2017'),
+            'email' => 'imprenta@omee.com',
+            'role_id' => 4,
+            'nombre' => 'user',
+            'apellido' =>'imprenta',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ]);
     }
 
-    private function paises() {
-        
-    }
 
 }

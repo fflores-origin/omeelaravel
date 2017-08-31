@@ -35,7 +35,7 @@
   		<div class="card-separator"></div>
 	 <div class="card-block">
 		<div class="card-inside">
-	   		<strong>Responsable</strong> : {{ $e->nombre }} {{ $e->nombre }}	
+	   		<strong>Responsable</strong> : {{ $e->user->nombre }} {{ $e->user->nombre }}	
 		</div>
 		<div class="card-inside">
 	   		<strong>Direccion</strong> : {{ $e->direccion }}	

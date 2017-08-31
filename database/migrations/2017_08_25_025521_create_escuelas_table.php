@@ -32,8 +32,8 @@ class CreateEscuelasTable extends Migration
             $table->string('razon_social');
             $table->string('nombre_escuela');
             $table->integer('tipo_escuela_id');
-            $table->string('nombre');
-            $table->string('apellido');
+            // $table->string('nombre');
+            // $table->string('apellido');
             $table->string('direccion');
             $table->string('codigo_postal');
             $table->string('provincia');

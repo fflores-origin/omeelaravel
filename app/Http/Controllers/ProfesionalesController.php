@@ -24,14 +24,15 @@ class ProfesionalesController extends Controller
         $u = new User;
         $u->name = $d['usuario'];
         $u->password = bcrypt($d['password']);
+        $u->role_id = 3;
         $u->email = $d['email'];
+        $u->nombre = $d['nombre'];
+        $u->apellido = $d['apellido'];
         $u->save();
 
         $a = new Alumno;
 
         $a->id = $u->id;
-        $a->nombre = $d['nombre'];
-        $a->apellido = $d['apellido'];
         $a->escuela_id = $d['escuela_id'];
         $a->dni = $d['dni'];
         $a->fecha_nacimiento = $d['fecha_nacimiento'];
@@ -42,7 +43,7 @@ class ProfesionalesController extends Controller
         $a->horarios = $d['horarios'];
         $a->save();
 
-        return back()->with('info',' Nuevo alumno ' . $a->nombre . ' ' . $a->apellido .' dado de alta correctamente. Nº Matricula :' . $a->id );
+        return back()->with('info',' Nuevo alumno :' . $u->nombre . ' ' . $u->apellido .', dado de alta correctamente. Nº Matricula :<strong>' . $a->id . '</strong>');
 
 
     }
@@ -50,8 +51,9 @@ class ProfesionalesController extends Controller
     public function index()
     {
         
+        $data = Alumno::get();
         
-    	return view('profesionales.index');
+    	return view('profesionales.index',compact('data'));
     }
 
     public function create() 

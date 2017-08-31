@@ -18,8 +18,8 @@ class CreateAlumnosTable extends Migration
             $table->integer('id');
             $table->primary('id');
 
-            $table->string('nombre');
-            $table->string('apellido');
+            // $table->string('nombre');
+            // $table->string('apellido');
             $table->integer('escuela_id');
             $table->string('dni');
             $table->date('fecha_nacimiento');

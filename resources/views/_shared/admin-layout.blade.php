@@ -53,7 +53,7 @@
 		<div class="form-inline my-2">
 	      	<ul class="navbar-nav mr-auto">
 	      		<li class="nav-item">
-					<a class="nav-link" href="#">{{ auth()->user()->perfil }}</a>
+					<a class="nav-link" href="#">{{ auth()->user()->getUserName() }}</a>
 				</li>
 	      	</ul>
 	    </div>

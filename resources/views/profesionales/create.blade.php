@@ -25,7 +25,7 @@
 			<div class="alert alert-success" role="alert">
 				<div class="container">
 					<div class="row" style="font-size: 16px;">      
-						<strong>¡ Felicidades ! </strong>&nbsp; {{ session('info') }}
+						<strong>¡ Felicidades ! </strong>&nbsp; {!! session('info') !!}
 			    	</div>
 				</div>
 			</div>		

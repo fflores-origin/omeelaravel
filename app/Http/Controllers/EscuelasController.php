@@ -32,14 +32,14 @@ class EscuelasController extends Controller
         $u->password = bcrypt($d['password']);
         $u->email = $d['email'];
         $u->role_id = 2;
+        $u->nombre = $d['nombre'];
+        $u->apellido = $d['apellido'];
         $u->save();
 
         $e = new Escuela;
         $e->razon_social = $d['razon_social'];
         $e->nombre_escuela = $d['nombre_escuela'];
         $e->tipo_escuela_id = $d['tipo_id'];
-        $e->nombre = $d['nombre'];
-        $e->apellido = $d['apellido'];
         $e->direccion = $d['direccion'];
         $e->codigo_postal = $d['codigo_postal'];
         $e->provincia = $d['provincia'];
