@@ -8,7 +8,10 @@ class Certificado extends Model
 {
     
 
-    public function preguntas() { return $this->hasMany(Pregunta::class); }
+    public function preguntas() 
+    { 
+    	return $this->hasMany(Pregunta::class); 
+    }
     
 
 }

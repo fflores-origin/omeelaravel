@@ -22,9 +22,9 @@ class AdminController extends Controller
 
     public function matriculados() {
 
-    	//$alumnos = DB::table('alumnos')->get();
+        $user = auth()->user();
 
-    	$alumnos = Alumno::all();
+    	$alumnos = $user->isAdmin() ? Alumno::all() : Alumno::where('escuela_id', $user->id)->get();
 
     	return view('administracion.matriculados', compact('alumnos'));
     }

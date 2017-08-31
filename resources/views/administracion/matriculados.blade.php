@@ -6,10 +6,13 @@
 
 
 
-<h2>Registrados</h2>
+<h2>Registrados 
+@if(auth()->user()->hasRole('escuela'))
+ - Escuela : {{ auth()->user()->nombre_escuela}}
+@endif
+</h2>
 
 <br>
-	
 <table class="table">
 	<thead>
 		<tr>
@@ -25,10 +28,18 @@
 		@forelse($alumnos as $al)
 			<tr>
 				<td>{{ $al->id }}</td>
-				<td>{{ $al->nombre }}</td>
-				<td>{{ $al->apellido }}</td>
+				<td>{{ $al->user->nombre }}</td>
+				<td>{{ $al->user->apellido }}</td>
 				<td>{{ $al->dni }}</td>
-				<td><a href="#">Certificados</a></td>
+				<td>
+					<ul>
+						@forelse($al->certificados as $cert)
+							<li>{{ $cert->name }}</li>		
+						@empty
+							<li> Sin Certificados </li>
+						@endforelse
+					</ul>
+				</td>
 			</tr>
 		@empty
 			<tr>

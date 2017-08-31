@@ -54,6 +54,19 @@ class User extends Authenticatable
      
     }
 
+    public function isEscuela()
+    {
+        if ($this->escuela() != null)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public function isAdmin()
+    {
+        return $this->hasRole('admin');
+    }
 
     public function getUserName()
     {
