@@ -42,7 +42,7 @@
 
 @if(!$data->isEmpty())
 
-<div class="card-deck">
+<div class="card-columns">
 @foreach($data as $e)
 	<div class="card ishidden">
 		<div align="center" class="card-inside card-title"> 

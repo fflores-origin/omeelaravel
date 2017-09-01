@@ -2,57 +2,57 @@
 
 @section('contenido')
 
+<style type="text/css">
+	.card-link 
+	{
+		clear: both;	
+	}
+
+	.card-link
+	{
+		font-size: 19px;
+		padding-top: 30px;
+		padding-bottom: 2px;
+		color: black;
+	}
+
+
+
+	.card {
+		padding: 30px;
+	}
+
+</style>
+
 <div align="center" class="title-form">
 		<h3>Matriculados</h3>
 </div>	
 
-<div class="container">
+<div class="container" style="padding: 0 70px;">
 
 @if(!$data->isEmpty())
 
 <div class="card-columns">
 @foreach($data as $e)
 	<div class="card">
-		<div align="center" class="card-inside card-title"> 
-			<h5>{{ $e->nombre_escuela }}</h5>
+		<div align="center"> 
+			<img src="http://omee.hol.es/wp-content/uploads/2016/04/omee_logo.jpg" width="140" height="140" alt="">
 		</div>
-  		<div class="card-separator"></div>
-	 <div class="card-block">
-		<div class="card-inside">
-	   		<strong>Responsable</strong> : {{ $e->nombre }} {{ $e->nombre }}	
-		</div>
-		<div class="card-inside">
-	   		<strong>Direccion</strong> : {{ $e->direccion }}	
-		</div>
-		<div class="card-inside">
-	   		<strong>Codigo Postal</strong> : {{ $e->codigo_postal }}	
-		</div>
-		<div class="card-inside">
-	   		<strong>Provincia</strong> : {{ $e->provincia }}
-		</div>
-		<div class="card-inside">
-	   		<strong>Pais</strong> : {{ $e->pais }}	
-		</div>
-		<div class="card-inside">
-	   		<strong>Telefono</strong> : {{ $e->telefono }}	
-		</div>
-		<div class="card-inside">
-	   		<strong>Email</strong> : {{ $e->user->email }}
-		</div>
+	 <div align="center">
+	   		<a href="{{ route('profesional', $e->id ) }}" class="card-link">{{ $e->user->nombre }} {{ $e->user->apellido }}</a>		
 	  </div>	
 	</div>
 
 @endforeach
+
 </div> {{-- cards --}}
+
 @else
 
 	<h3>No hay alumnos cargadas</h3>
 
 @endif
+
 </div>
-
-
-	
-
 
 @stop

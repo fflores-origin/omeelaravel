@@ -66,5 +66,12 @@ class ProfesionalesController extends Controller
 
     }
 
+    public function show($id)
+    {
+        $alumno = Alumno::where('id',$id)->get();
+
+        return view('profesionales.alumno',compact('alumno'));
+    }
+
 
 }
