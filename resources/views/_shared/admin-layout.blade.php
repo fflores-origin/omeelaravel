@@ -32,24 +32,39 @@
 
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto">
-		<li class="nav-item active">
-			<a class="nav-link {{ activeMenu('/') }}" href="{{ route('/') }}">Volver al Sitio <span class="sr-only">(current)</span></a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link {{ activeMenu('admin/profesionales') }}" href="{{ route('admin-profesionales')}}">Matriculados</a>
-	     </li>
-		<li class="nav-item">
-			<a class="nav-link {{ activeMenu('admin/certificados') }}" href="{{ route('admin-certificados') }}">Certificados</a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link {{ activeMenu('admin/examenes') }}" href="{{ route('admin-examenes') }}">Examenes</a>
-		</li>
-		@if(auth()->user()->hasRole('admin'))
-		<li class="nav-item">
-			<a class="nav-link {{ activeMenu('admin/usuarios') }}" href="{{ route('admin-usuarios') }}">Usuarios</a>
-		</li>
-		@endif
+		
+			<li class="nav-item active">
+				<a class="nav-link {{ activeMenu('/') }}" href="{{ route('/') }}">Volver al Sitio <span class="sr-only">(current)</span></a>
+			</li>
+			
+			<li class="nav-item">
+				<a class="nav-link {{ activeMenu('admin/profesionales') }}" href="{{ route('admin-profesionales')}}">Matriculados</a>
+		    </li>
+		    
+		    @if(auth()->user()->hasRoles(['admin']))
+			<li class="nav-item">
+				<a class="nav-link {{ activeMenu('admin/certificados') }}" href="{{ route('admin-certificados') }}">Certificados</a>
+			</li>
+			@endif
+			
+			<li class="nav-item">
+				<a class="nav-link {{ activeMenu('admin/examenes') }}" href="{{ route('admin-examenes') }}">Examenes</a>
+			</li>
+			
+			@if(auth()->user()->hasRoles(['admin','escuela','imprenta']))
+			<li class="nav-item">
+				<a class="nav-link {{ activeMenu('admin/examenes') }}" href="{{ route('admin-examenes') }}">Impresiones</a>
+			</li>
+			@endif
+
+			@if(auth()->user()->hasRoles(['admin']))
+			<li class="nav-item">
+				<a class="nav-link {{ activeMenu('admin/usuarios') }}" href="{{ route('admin-usuarios') }}">Usuarios</a>
+			</li>
+			@endif
+			
 		</ul>
+
 		<div class="form-inline my-2">
 	      	<ul class="navbar-nav mr-auto">
 	      		<li class="nav-item">

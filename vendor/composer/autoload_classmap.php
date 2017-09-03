@@ -56,6 +56,7 @@ return array(
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreatePreguntasTable' => $baseDir . '/database/migrations/2017_08_27_234112_create_preguntas_table.php',
     'CreateRespuestasTable' => $baseDir . '/database/migrations/2017_08_27_234200_create_respuestas_table.php',
+    'CreateRoleUserTable' => $baseDir . '/database/migrations/2017_09_03_050729_create_role_user_table.php',
     'CreateRolesTable' => $baseDir . '/database/migrations/2017_08_27_055634_create_roles_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'Cron\\AbstractField' => $vendorDir . '/mtdowling/cron-expression/src/Cron/AbstractField.php',

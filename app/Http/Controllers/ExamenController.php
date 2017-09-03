@@ -3,19 +3,26 @@
 namespace App\Http\Controllers;
 
 use App\Examen;
+use App\Alumno;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class ExamenController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+    function __construct()
+    {
+        $this->middleware(['auth', 'roles:admin,alumno']);
+    }
+
+
     public function index()
     {
-        
+        $userId = auth()->user()->id;
+
+        $data = Alumno::where('id', $userId)->first();
+
+        return view('examenes.index', compact('data'));
     }
 
     /**

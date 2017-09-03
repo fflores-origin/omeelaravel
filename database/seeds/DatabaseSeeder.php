@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
         // $this->call(UsersTableSeeder::class);
         $this->roles();
         $this->users();
+        $this->role_user();
     	$this->tipoEscuelas();
 
     }
@@ -37,27 +38,28 @@ class DatabaseSeeder extends Seeder
     }
 
     private function roles() {
+        //1
         DB::table('roles')->insert([
             'key' => 'admin',
             'name' => 'Administrador Web',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
             ]);
-
+        //2
         DB::table('roles')->insert([
             'key' => 'escuela',
             'name' => 'Escuela',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
             ]);
-
+        //3
         DB::table('roles')->insert([
             'key' => 'alumno',
             'name' => 'Alumno',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
             ]);
-
+        //4
         DB::table('roles')->insert([
             'key' => 'imprenta',
             'name' => 'Impresion de Certificados',
@@ -71,7 +73,6 @@ class DatabaseSeeder extends Seeder
             'name' => 'admin',
             'password' => bcrypt('Novedad.2017'),
             'email' => 'pachu.flores@gmail.com',
-            'role_id' => 1,
             'nombre' => 'user',
             'apellido' =>'admin',
             'created_at' => Carbon::now(),
@@ -82,12 +83,24 @@ class DatabaseSeeder extends Seeder
             'name' => 'imprenta',
             'password' => bcrypt('Imprenta.2017'),
             'email' => 'imprenta@omee.com',
-            'role_id' => 4,
             'nombre' => 'user',
             'apellido' =>'imprenta',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ]);
+    }
+
+    private function role_user()
+    {
+        DB::table('role_user')->insert([
+            'user_id' => 1,
+            'role_id' => 1
+            ]);
+
+        DB::table('role_user')->insert([
+            'user_id' => 2,
+            'role_id' => 4
+            ]);
     }
 
 

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests\CreateEscuelaRequest;
 use App\User;
 use App\Escuela;
+use App\RoleUser;
+use DB;
 
 class EscuelasController extends Controller
 {
@@ -25,13 +27,15 @@ class EscuelasController extends Controller
 
     public function store(CreateEscuelaRequest $request)
     {
+
+        DB::beginTransaction();
         $d = $request->all();
         
         $u = new User;
         $u->name = $d['usuario'];
         $u->password = bcrypt($d['password']);
         $u->email = $d['email'];
-        $u->role_id = 2;
+        //$u->role_id = 2;
         $u->nombre = $d['nombre'];
         $u->apellido = $d['apellido'];
         $u->save();
@@ -48,6 +52,12 @@ class EscuelasController extends Controller
         $e->id = $u->id;
         $e->save();
 
+        DB::table('role_user')->insert([
+            'user_id' => $u->id,
+            'role_id' => 2]
+        );        
+
+        DB::commit();
         return back()->with('info',' Tu escuela ya forma parte de nuestro Sitio.');
 
     }

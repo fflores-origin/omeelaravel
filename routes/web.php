@@ -52,7 +52,7 @@ Route::post('escuela', 'EscuelasController@store');
 
 
 //CERTIFICACION
-Route::get('certificados', ['as' => 'certificados', 'uses' => 'CertificacionController@create']);
+Route::get('certificados', ['as' => 'certificados', 'uses' => 'ExamenController@index']);
 
 //ADMIN
 Route::get( 'admin' , [

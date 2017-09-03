@@ -3,23 +3,27 @@
 @section('contenido')
 
 <style type="text/css">
-	.card-link 
-	{
-		clear: both;	
-	}
+
 
 	.card-link
 	{
-		font-size: 19px;
+		font-size: 16px;
 		padding-top: 30px;
 		padding-bottom: 2px;
-		color: black;
+		color: #ff2b99;
 	}
 
-
+	.card-link:hover 
+	{
+		color: #D83389;
+	}
 
 	.card {
-		padding: 30px;
+		padding: 40px;
+	}
+
+	.container {
+		display: flex;
 	}
 
 </style>
@@ -36,13 +40,12 @@
 @foreach($data as $e)
 	<div class="card">
 		<div align="center"> 
-			<img src="http://omee.hol.es/wp-content/uploads/2016/04/omee_logo.jpg" width="140" height="140" alt="">
+			<img src="http://omee.hol.es/wp-content/uploads/2016/04/omee_logo.jpg" width="140" height="140" alt="{{ $e->user->nombre }} {{ $e->user->apellido }}">
 		</div>
-	 <div align="center">
+	 <div class="name-link" align="center">
 	   		<a href="{{ route('profesional', $e->id ) }}" class="card-link">{{ $e->user->nombre }} {{ $e->user->apellido }}</a>		
 	  </div>	
 	</div>
-
 @endforeach
 
 </div> {{-- cards --}}

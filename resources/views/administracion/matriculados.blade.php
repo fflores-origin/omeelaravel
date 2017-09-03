@@ -7,7 +7,7 @@
 
 
 <h2>Registrados 
-@if(auth()->user()->hasRole('escuela'))
+@if(auth()->user()->hasRoles(['escuela']))
  - Escuela : {{ auth()->user()->nombre_escuela}}
 @endif
 </h2>

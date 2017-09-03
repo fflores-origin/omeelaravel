@@ -7,6 +7,7 @@ use App\Http\Requests\CreateAlumnoRequest;
 use App\Escuela;
 use App\User;
 use App\Alumno;
+use App\RoleUser;
 use DB;
 
 class ProfesionalesController extends Controller
@@ -25,14 +26,13 @@ class ProfesionalesController extends Controller
         $u = new User;
         $u->name = $d['usuario'];
         $u->password = bcrypt($d['password']);
-        $u->role_id = 3;
+        //$u->role_id = 3;
         $u->email = $d['email'];
         $u->nombre = $d['nombre'];
         $u->apellido = $d['apellido'];
         $u->save();
 
         $a = new Alumno;
-
         $a->id = $u->id;
         $a->escuela_id = $d['escuela_id'];
         $a->dni = $d['dni'];
@@ -43,6 +43,12 @@ class ProfesionalesController extends Controller
         $a->pais = $d['pais'];
         $a->horarios = $d['horarios'];
         $a->save();
+
+        DB::table('role_user')->insert([
+            'user_id' => $u->id,
+            'role_id' => 3]
+        );
+
 
         DB::commit();
         return back()->with('info',' Nuevo alumno :' . $u->nombre . ' ' . $u->apellido .', dado de alta correctamente. Nº Matricula :<strong>' . $a->id . '</strong>');
@@ -55,7 +61,7 @@ class ProfesionalesController extends Controller
         
         $data = Alumno::get();
         
-    	return view('profesionales.index',compact('data'));
+    	return view('profesionales.index', compact('data'));
     }
 
     public function create() 
@@ -68,9 +74,9 @@ class ProfesionalesController extends Controller
 
     public function show($id)
     {
-        $alumno = Alumno::where('id',$id)->get();
+        $alumno = Alumno::where('id',$id)->first();
 
-        return view('profesionales.alumno',compact('alumno'));
+        return view('profesionales.alumno',compact('alumno','user'));
     }
 
 
