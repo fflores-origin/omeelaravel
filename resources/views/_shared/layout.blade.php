@@ -38,17 +38,23 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
+      
+    @if(!auth()->user()->hasRoles(['alumno']))
       <li class="nav-item">
         <a class="nav-link" href="{{ route('admin-index')}}">Administración <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="{{ route('admin-profesionales')}}">Matriculados</a>
       </li>
-     
+     @endif
     </ul>
-    <div class="form-inline my-2 my-lg-0">
-      
-    </div>
+    <div class="form-inline my-2">
+	      	<ul class="navbar-nav mr-auto">
+	      		<li class="nav-item">
+					<a class="nav-link" href="#" style="color:#ff2b99;">{{ auth()->user()->getUserName() }}</a>
+				</li>
+	      	</ul>
+	    </div>
   </div>
 </nav>
 

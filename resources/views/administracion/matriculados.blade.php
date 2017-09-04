@@ -5,6 +5,18 @@
 <div class="container">
 
 
+@if ( session()->has('info') )
+	<div class="container">
+			<div class="alert alert-success" role="alert">
+				<div class="container">
+					<div class="row" style="font-size: 16px;">      
+						<strong>¡ Felicidades ! </strong>&nbsp; {!! session('info') !!}
+			    	</div>
+				</div>
+			</div>		
+	</div>
+
+@endif
 
 <h2>Registrados 
 @if(auth()->user()->hasRoles(['escuela']))
@@ -16,11 +28,12 @@
 <table class="table">
 	<thead>
 		<tr>
-			<th>ID</th>
+			<th>Matricula-ID</th>
 			<th>Nombre</th>
 			<th>Apellido</th>
 			<th>DNI</th>
 			<th>Certificados</th>
+			<th>Acciones</th>
 		</tr>
 
 	</thead>
@@ -40,6 +53,7 @@
 						@endforelse
 					</ul>
 				</td>
+				<td><a class="btn btn-primary btn-sm" href="{{ route('admin-certificar', $al->id )}}">Examen</a></td>
 			</tr>
 		@empty
 			<tr>

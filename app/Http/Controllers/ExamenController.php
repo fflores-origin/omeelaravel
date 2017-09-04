@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Examen;
+use App\Examene;
+use App\Respuesta;
+use App\Pregunta;
 use App\Alumno;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -18,76 +20,91 @@ class ExamenController extends Controller
 
     public function index()
     {
+
+        if(!auth()->user()->hasRoles(['alumno']))
+            return redirect('/');
+
         $userId = auth()->user()->id;
 
-        $data = Alumno::where('id', $userId)->first();
+        $alumno = Alumno::where('id', $userId)->first();
+
+        $data = [];
+
+        if($alumno)
+        {
+            $data = Examene::where([
+                ['alumno_id', $alumno->id],
+                ['intentos','<',3],
+                ['aprobado', 0]
+            ])
+            ->get();
+            
+        }
 
         return view('examenes.index', compact('data'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Examen  $examen
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Examen $examen)
-    {
-        //
+
+
+    
+    public function show($id)
+    {        
+        $examen =  Examene::where('id', $id)->first();
+
+        return view('examenes.show', compact('examen'));
+
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Examen  $examen
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Examen $examen)
+    public function examinar(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $respuestas = $data;
+        unset($respuestas['_token']);
+
+
+        $puntaje = 0;
+
+        foreach ($respuestas as $p => $r) {
+
+
+            $preg = Pregunta::where('id',$p)->first();
+            $res = Respuesta::where('id',$r)->first();
+
+
+            if($res->correcta)
+                $puntaje = $puntaje + $preg->valor;
+
+        }
+
+        if($puntaje > 70)
+        {
+
+            //inserto en tabla alumno_certificado
+            dd($puntaje);
+        }
+
+        return 'le pifiaste amigo';
+
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Examen  $examen
-     * @return \Illuminate\Http\Response
-     */
+    
+    
     public function update(Request $request, Examen $examen)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Examen  $examen
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Examen $examen)
-    {
-        //
-    }
+    
+
 }

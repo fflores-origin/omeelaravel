@@ -24,7 +24,9 @@ class AdminController extends Controller
 
         $user = auth()->user();
 
-    	$alumnos = $user->isAdmin() ? Alumno::all() : Alumno::where('escuela_id', $user->id)->get();
+    	$alumnos = auth()->user()->hasRoles(['admin']) 
+            ? Alumno::all() 
+            : Alumno::where('escuela_id', $user->id)->get();
 
     	return view('administracion.matriculados', compact('alumnos'));
     }

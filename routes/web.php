@@ -46,34 +46,46 @@ Route::get('profesional/{id}', ['as' => 'profesional', 'uses' => 'ProfesionalesC
 Route::post('profesionales', 'ProfesionalesController@store');
 
 //ESCUELA
-Route::get('escuelas' , ['as' => 'escuelas' , 'uses' => 'EscuelasController@index']);
-Route::get('escuelas/create', ['as' => 'escuelas.create', 'uses' => 'EscuelasController@create']);
+Route::get('escuelas' , 
+		['as' => 'escuelas' , 'uses' => 'EscuelasController@index']);
+Route::get('escuelas/create', 
+		['as' => 'escuelas.create', 'uses' => 'EscuelasController@create']);
 Route::post('escuela', 'EscuelasController@store');
 
 
 //CERTIFICACION
-Route::get('certificados', ['as' => 'certificados', 'uses' => 'ExamenController@index']);
+
+Route::get('certificados', 
+		['as' => 'certificados', 'uses' => 'ExamenController@index']);
+
+Route::get('examen/{id}', 
+		['as' => 'examen', 'uses' => 'ExamenController@show']);
+
+Route::post('examinar',
+		['as' => 'examinar', 'uses' => 'ExamenController@examinar']);
+
 
 //ADMIN
-Route::get( 'admin' , [
-			'as' => 'admin-index', 
-			'uses' => 'AdminController@index'
-			]);
+Route::get( 'admin' , 
+		['as' => 'admin-index', 'uses' => 'AdminController@index']);
 
-Route::get('admin/profesionales', [
-	'as' => 'admin-profesionales', 
-	'uses' => 'AdminController@matriculados'
-	]);
+Route::get('admin/profesionales', 
+		['as' => 'admin-profesionales', 'uses' => 'AdminController@matriculados']);
 
 
-Route::get('admin/usuarios', [ 
-	'as' => 'admin-usuarios',
-	'uses' => 'AdminUsuariosController@index']);
+Route::get('admin/usuarios', 
+	['as' => 'admin-usuarios','uses' => 'AdminUsuariosController@index']);
 
-Route::get('admin/examenes', [ 
-	'as' => 'admin-examenes',
-	'uses' => 'AdminExamenesController@index']);
+Route::get('admin/examenes', 
+	['as' => 'admin-examenes','uses' => 'AdminExamenesController@index']);
 
 Route::get('admin/certificados', [ 
 	'as' => 'admin-certificados',
 	'uses' => 'AdminCertificadosController@index']);
+
+Route::post('admin/certificar',
+	['as' => 'examen-save','uses' => 'AdminExamenesController@store']);
+
+Route::get('admin/certificar/{id}', 
+	['as' => 'admin-certificar','uses' => 'AdminExamenesController@certificar']);
+

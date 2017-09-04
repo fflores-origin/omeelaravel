@@ -20,6 +20,7 @@ class ProfesionalesController extends Controller
 
     public function store(CreateAlumnoRequest $request)
     {
+
         DB::beginTransaction();
         $d = $request->all();
 
@@ -66,6 +67,12 @@ class ProfesionalesController extends Controller
 
     public function create() 
     {
+
+        if(auth()->user()->hasRoles(['alumno']))
+        {
+            return redirect('/');
+        }
+
         $escuelas = Escuela::all();
 
         return view('profesionales.create', compact('escuelas'));
