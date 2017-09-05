@@ -76,16 +76,14 @@
   </div>
 
   <div class="tab-pane" id="agregar" role="tabpanel">
-
 	  <div class="group-form">
+		  <form method="POST">
+			<br>
 
-		  <form>
-		  <br>
 		  	<div class="form-group">
 		    	<label>Añadir nueva entrada</label>
 		    	<input type="text" name="titulo" class="form-control col-md-4" placeholder="Ingresar titulo">
 			</div>
-
 
 			<div class="form-group">
 		    	<label>Categoria</label>
@@ -107,8 +105,6 @@
   </div>
 
   <div class="tab-pane" id="categorias" role="tabpanel">
-  	
-	  
 	  	<div>
 	  		<table class="table">
 	  			<thead>
@@ -135,8 +131,6 @@
 			</div>
 			<button type="submit" class="btn btn-primary">Agregar</button>
 		</form>
-
-
   </div>
 
 </div>

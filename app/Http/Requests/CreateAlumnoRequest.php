@@ -30,7 +30,7 @@ class CreateAlumnoRequest extends FormRequest
             'nombre'=> 'required',
             'apellido'=> 'required',
             'escuela_id'=> 'required',
-            'dni'=> 'required',
+            'dni'=> 'required|unique:post',
             'fecha_nacimiento'=> 'required|date',
             'direccion'=> 'required',
             'ciudad'=> 'required',

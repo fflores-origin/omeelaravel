@@ -10,13 +10,12 @@
 	</div>
 	<div class="container">
 		<div class="col-md-6 form-group mx-auto">
-			
-						
+				
 			
 			<form action="login" method="post" >
 				{!! csrf_field() !!}
 				<div class="customInput">
-					<input type="email" name="email" placeholder="Email" class="form-control"></input>
+					<input type="text" name="email_or_username" placeholder="Mail o Usuario" class="form-control"></input>
 				</div>
 
 				<div class="customInput">

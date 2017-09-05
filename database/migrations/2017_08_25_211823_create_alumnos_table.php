@@ -17,11 +17,8 @@ class CreateAlumnosTable extends Migration
 
             $table->integer('id');
             $table->primary('id');
-
-            // $table->string('nombre');
-            // $table->string('apellido');
             $table->integer('escuela_id');
-            $table->string('dni');
+            $table->string('dni')->unique();
             $table->date('fecha_nacimiento');
             $table->string('direccion');
             $table->string('ciudad');

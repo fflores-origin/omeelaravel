@@ -51,7 +51,7 @@
     <div class="form-inline my-2">
 	      	<ul class="navbar-nav mr-auto">
 	      		<li class="nav-item">
-					<a class="nav-link" href="#" style="color:#ff2b99;">{{ auth()->user()->getUserName() }}</a>
+					<a class="nav-link" href="#" style="color:#ff2b99;"><i class="fa fa-user-circle-o" aria-hidden="true"></i> {{ auth()->user()->getUserName() }}</a>
 				</li>
 	      	</ul>
 	    </div>

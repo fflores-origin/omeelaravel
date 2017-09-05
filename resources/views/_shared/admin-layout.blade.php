@@ -16,6 +16,13 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
 
+	<link rel="stylesheet" href="{{ URL::asset('css/font-awesome.min.css') }}">	
+
+@yield('stylesheets')
+
+@yield('refs')
+
+
 </head>
 <body>
 
@@ -63,16 +70,24 @@
 			</li>
 			@endif
 
+			@if(auth()->user()->hasRoles(['admin']))
 			<li class="nav-item">
 				<a class="nav-link {{ activeMenu('admin/blog') }}" href="{{ route('admin-blog') }}">Blog</a>
 			</li>
-			
+			@endif
+
+			@if(auth()->user()->hasRoles(['admin']))
+			<li class="nav-item">
+				<a class="nav-link {{ activeMenu('admin/escuelas') }}" href="{{ route('admin-escuelas') }}">Escuelas</a>
+			</li>
+			@endif
+
 		</ul>
 
 		<div class="form-inline my-2">
 	      	<ul class="navbar-nav mr-auto">
 	      		<li class="nav-item">
-					<a class="nav-link" href="#">{{ auth()->user()->getUserName() }}</a>
+					<a class="nav-link" href="#"><i class="fa fa-user-circle-o" aria-hidden="true"></i> {{ auth()->user()->getUserName() }}</a>
 				</li>
 	      	</ul>
 	    </div>
@@ -80,6 +95,9 @@
 </nav>
 
 @yield('contenido')
+
+
+@yield('scripts')
 
 
 </body>
