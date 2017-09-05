@@ -94,7 +94,7 @@ class ExamenController extends Controller
             dd($puntaje);
         }
 
-        return 'le pifiaste amigo';
+        return 'desaprobado';
 
     }
 

@@ -62,6 +62,10 @@
 				<a class="nav-link {{ activeMenu('admin/usuarios') }}" href="{{ route('admin-usuarios') }}">Usuarios</a>
 			</li>
 			@endif
+
+			<li class="nav-item">
+				<a class="nav-link {{ activeMenu('admin/blog') }}" href="{{ route('admin-blog') }}">Blog</a>
+			</li>
 			
 		</ul>
 

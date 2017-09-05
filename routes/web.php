@@ -89,3 +89,5 @@ Route::post('admin/certificar',
 Route::get('admin/certificar/{id}', 
 	['as' => 'admin-certificar','uses' => 'AdminExamenesController@certificar']);
 
+Route::get('admin/blog',
+	['as' => 'admin-blog', 'uses' => 'AdminBlogController@index']);
