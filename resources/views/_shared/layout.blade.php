@@ -18,7 +18,8 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="http://v4-alpha.getbootstrap.com/examples/sticky-footer-navbar/sticky-footer-navbar.css">
-	<link rel="stylesheet" href="/css/font-awesome.min.css">	
+	<link rel="stylesheet" type="text/css" href="asdasda">
+	<link rel="stylesheet" href="{{ URL::asset('css/font-awesome.min.css') }}">	
 	<link rel="stylesheet" href="{{ URL::asset('css/styleOmee.css') }}">
 	<link rel="stylesheet" href="{{ URL::asset('css/omee-forms.css') }}">	
 	<script type="text/javascript" src="{{ URL::asset('/js/cookieTool.js') }}"></script>
